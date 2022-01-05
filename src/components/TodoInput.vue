@@ -23,14 +23,14 @@
 import Modal from './common/Modal.vue'
 
 export default {
-  data: function() {
+  data() {
     return {
       newTodoItem: '',
       showModal:false
     }
   },
   methods: {
-    addTodo: function() {
+    addTodo() {
       if (this.newTodoItem !== '') {
         this.$emit('addItem', this.newTodoItem);
         this.clearInput();
@@ -39,7 +39,7 @@ export default {
         this.showModal = !this.showModal;   //true false 를 변환해주는 부분 
       }
     },
-    clearInput: function() {
+    clearInput() {
       this.newTodoItem = '';
     }
   },
